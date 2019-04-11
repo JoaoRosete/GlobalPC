@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>{{ product.brand }} | {{ product.name }}</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="productos">
+    <ul class="breadcrumb">
+          <li><a href="{% url 'loja' %}"><strong>Home</strong></a></li>
+         <li><a href="{% url 'category' product.subcategory.category.id %}"><strong>{{ product.subcategory.category.title }}</strong></a></li>
+        <li><a href="{% url 'subcategory' product.subcategory.id %}"><strong>{{ product.subcategory.title }}</strong></a></li>
+         <li><a><strong>{{ product.title }}</strong></a></li>
+    </ul>
+    <div class="product details-lul">
+        <div class="product image-lul">
+            <img class="product-image" src="{{ product.image.url }}" />
+        </div>
+        <div class="product information">
+            <div class="title font" style="margin-top: -10px;">
+                <h3>{{ product.title }}</h3>
+                 <h4> Marca: {{ product.brand.title }} </h4>
+                <p class="descripton"> {{ product.description }}</p>
+                <div class="product price-lul">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                                <h3 style="float: right;">{{ product.price }} €</h3>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-3">
+                            <button type="button" class="btn btnBuy" style="margin-top: 20px;">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

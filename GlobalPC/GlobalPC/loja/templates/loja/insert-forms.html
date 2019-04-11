@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>GlobalPC |  Inserir Forms</title>
+    <style>
+        .footer{
+            bottom: 0px;
+        }
+    </style>
+{% endblock %}
+
+
+{% block body %}
+   <div class="container">
+        <div class="jumbotron">
+            <h1>Inserir Productos, Categorias e Subcategorias</h1>
+
+            <a href="{% url 'insert_product' %}" class="form-control submit-button" style="margin-top: 100px">Inserir Producto</a>
+            <a href="{% url 'insert_category' %}" class="form-control submit-button">Inserir Categoria</a>
+            <a href="{% url 'insert_subcategory' %}" class="form-control submit-button">Inserir SubCategoria</a>
+        </div>
+   </div>
+{% endblock %}

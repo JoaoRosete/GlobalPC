@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>GlobalPC | Inserir Producto</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+  <div class="jumbotron">
+    <h1>Introduzir Producto</h1>
+
+
+      <form action="{% url 'insert_product'%}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="form-control submit-button">Inserir Producto</button>
+    </form>
+  </div>
+</div>
+
+    <script>
+        $("input").addClass("form-control");
+        $("textarea").addClass("form-control");
+        $("select").addClass("form-control");
+         $("#search").attr("class", "textboxRight");
+    </script>
+{% endblock %}

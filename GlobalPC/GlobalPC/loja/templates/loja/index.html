@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>GlobalPC</title>
+    {% load static %}
+{% endblock %}
+
+
+{% block body %}
+
+
+
+
+
+<div class="navigation-header">
+{% for category in category %}
+    <div class="dropdown">
+        <button class="dropbtn"><a class="items" href="{% url 'category' category.id %}">{{ category.title }}</a></button>
+         <div class="dropdown-content">
+             <ul>
+            {% for subcategory in subcategory %}
+                {% if subcategory.category.id == category.id %}
+                <li><a  href="{% url 'subcategory' subcategory.id %}">{{ subcategory.title }}</a></li>
+
+                {% endif %}
+            {% endfor %}
+                     </ul>
+                </div>
+         </ul>
+    </div>
+{% endfor %}
+    </div>
+
+
+
+   <div class="tabs">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#featured">Destaques</a></li>
+            <li><a data-toggle="tab" href="#news">Novidades</a></li>
+            <li><a data-toggle="tab" href="#opportunity">Oportunidades</a></li>
+        </ul>
+   </div>
+
+     <div class="tab-content">
+        <div id="featured" class="tab-pane fade in active">
+            <div class="featured">
+                <div class="row">
+            {% for product in product %}
+                {% if product.featured %}
+                        <div class="col-lg-3 col-md-3 col-xs-3">
+                            <div class="product-item-info">
+                                <div class="product image">
+                                    <img class="product-image" src="{{ product.image.url }}" alt="{{ product.title }}">
+                                </div>
+
+                                <div class="product details">
+                                    <div class="product-name">
+                                        <a href="{% url 'product' product.id %}">
+                                            <strong>{{ product.name }}</strong>
+                                        </a>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="product price"> {{ product.price }}€</span>
+                                    </div>
+                                    <div class="product-btnBuy">
+                                        <button type="button"  name="buy" class="btn btnBuy">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                {% endif %}
+            {% endfor %}
+                    </div>
+            </div>
+        </div>
+        <div id="news" class="tab-pane fade">
+            <div class="news">
+                <div class="row">
+            {% for product in product %}
+                {% if product.news %}
+                    <div class="col-lg-3 col-md-3 col-xs-3">
+                            <div class="product-item-info">
+                                <div class="product image">
+                                    <img class="product-image" src="{{ product.image.url }}" alt="{{ product.title }}">
+                                </div>
+
+                                <div class="product details">
+                                    <div class="product-name">
+                                        <a href="{% url 'product' product.id %}">
+                                            <strong>{{ product.name }}</strong>
+                                        </a>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="product price"> {{ product.price }}€</span>
+                                    </div>
+                                    <div class="product-btnBuy">
+                                        <button type="button" value='{{ product.id }}' onclick='' class="btn btnBuy">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                {% endif %}
+            {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div id="opportunity" class="tab-pane fade">
+            <div class="opportunity">
+                <div class="row">
+            {% for product in product %}
+                {% if product.opportunity %}
+                     <div class="col-lg-3 col-md-3 col-xs-3">
+                            <div class="product-item-info">
+                                <div class="product image">
+                                    <img class="product-image" src="{{ product.image.url }}" alt="{{ product.title }}">
+                                </div>
+
+                                <div class="product details">
+                                    <div class="product-name">
+                                        <a href="{% url 'product' product.id %}">
+                                            <strong>{{ product.name }}</strong>
+                                        </a>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="product price"> {{ product.price }}€</span>
+                                    </div>
+                                    <div class="product-btnBuy">
+                                        <button type="button" value ="{{ product.id }}" class="btn btnBuy">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                {% endif %}
+            {% endfor %}
+                </div>
+            </div>
+        </div>
+     </div>
+        <footer>
+        <div class="footer">
+            <div class="container" style="margin-top: 10px;">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+                        <div class="custom-block">
+                            <img src="https://d36djlzg0xu24k.cloudfront.net/media/wysiwyg/site-seguro-1.png" alt="Site Seguro">
+                            <img src="https://d36djlzg0xu24k.cloudfront.net/media/wysiwyg/google-safe.png" alt="Google Safe Browsing">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+                        <address>
+                            <address style="float:left;font-size:15px;">
+                                © 2018 GLOBALPC PORTUGAL. TODOS OS DIREITOS RESERVADOS
+                            </address>
+
+                            <address style="float:left;font-size:13px;line-height:15px;">
+                                IVA INCLUÍDO À TAXA EM VIGOR PARA TODOS OS PRODUTOS. AS FOTOS APRESENTADAS PODEM NÃO CORRESPONDER ÀS CONFIGURAÇÕES DESCRITAS. PREÇOS E ESPECIFICAÇÕES SUJEITOS A ALTERAÇÃO SEM AVISO PRÉVIO. A CASEKING PORTUGAL DECLINA QUALQUER RESPONSABILIDADE POR EVENTUAIS ERROS PUBLICADOS NO SITE.
+                            </address>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+     $('.navigation-header').first().hide();
+
+    $(function () {
+        $(".btnBuy").click(function () {
+            $.ajax({
+               data: { 'user': {{ user.username }}, 'product': $(".btnBuy").val() },
+               type: 'get',
+               cache: false,
+               success: function (data) {
+                  purchase(data);
+               }
+            });
+        });
+    });
+    </script>
+{% endblock %}

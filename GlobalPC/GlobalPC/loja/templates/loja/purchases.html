@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for purchase in purchase %}
+        {% if purchase.user.user.id == user.id %}
+            {{ purchase.user.user.first_name }}
+            {{ purchase.product.title }}
+            {{ purchase.product.price }} €
+        {% endif %}
+    {% endfor %}
+</body>
+</html>

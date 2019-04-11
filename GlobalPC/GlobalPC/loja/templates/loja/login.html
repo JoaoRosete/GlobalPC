@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>GlobalPC | Login</title>
+{% endblock %}
+
+
+{% block body %}
+ <div class="container">
+        <div class="jumbotron">
+             <h1>Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="form-control submit-button">Login</button>
+    </form>
+        </div>
+ </div>
+
+    <script>
+        $("input").addClass("form-control");
+        $("textarea").addClass("form-control");
+        $("select").addClass("form-control");
+         $("#search").attr("class", "textboxRight");
+    </script>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>GlobalPC | Logout</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+  <div class="jumbotron">
+    <h1>Logout </h1>
+      <p class="font">Fizeste logout com sucesso!</p>
+
+      <a href="{% url 'loja' %}" class="form-control submit-button" style="margin-top: 50px">Voltar á Página Inicial</a>
+      <a href="{% url 'login' %}" class="form-control submit-button">Login</a>
+  </div>
+</div>
+{% endblock %}

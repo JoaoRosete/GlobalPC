@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>GlobalPC | RestFrameWork</title>
+{% endblock %}
+
+
+{% block body %}
+     <div class="container">
+          <div class="jumbotron">
+            <h1>RestFrameWork</h1>
+
+              <a href="{% url 'product_list' %}" class="form-control submit-button" style="margin-top: 100px">Lista de Productos</a>
+              <a href="http://127.0.0.1:8000/loja/api/productos/1/" class="form-control submit-button">Detalhes de Um Producto</a>
+              <a href="{% url 'category_list' %}" class="form-control submit-button">Lista de Categorias JSON</a>
+              <a href="http://127.0.0.1:8000/loja/api/categorias/1/" class="form-control submit-button">Detalhes de Uma Categoria</a>
+              <a href="{% url 'subcategory_list' %}" class="form-control submit-button">Lista de Subcategoria</a>
+              <a href="http://127.0.0.1:8000/loja/api/subcategorias/1/" class="form-control submit-button">Detalhes de Uma Subcategoria</a>
+          </div>
+     </div>
+
+{% endblock %}

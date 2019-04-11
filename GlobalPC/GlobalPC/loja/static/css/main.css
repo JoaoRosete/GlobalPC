@@ -1,0 +1,340 @@
+body{
+    color: #777777;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 1.3rem;
+    background-color: #000000;
+    background-image: url(//d36djlzg0xu24k.cloudfront.net/media/porto/page_bg/default/background_33.png);
+    background-color: #AE3744 !important;
+    background-repeat: no-repeat !important;
+    background-position: center top !important;
+    background-attachment: scroll !important;
+    background-size: initial !important;
+    background-origin: initial !important;
+    background-clip: initial !important;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.header{
+    background-color: rgb(31, 33, 39);
+    color: rgb(218, 216, 212);
+    height: 40px;
+}
+
+.panel{
+    width: 1370px;
+    margin: 0 auto;
+    background-color: transparent !important;
+}
+
+.panel .title {
+    font-size: 13px;
+    line-height: 3;
+}
+
+.header-links{
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    list-style: none none;
+    float: right;
+    margin-left: auto;
+}
+
+.header-links a {
+   color: rgb(218, 216, 212);
+}
+
+.header-links > li{
+       font-size: 13px;
+       line-height: 3;
+}
+
+.separator {
+    margin-left: 10px;
+}
+
+.right{
+    margin-right: 15px;
+}
+
+.tabs{
+    width: 1170px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.tab-content {
+    width: 1170px;
+    margin: 0 auto;
+    background-color: white;
+    padding-bottom: 50px;
+}
+
+.product-item-info {
+    margin-top: 30px;
+}
+
+img.product-image {
+    position: relative;
+    width:  150px;
+    height: 200px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
+
+.product-name{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.product-name a{
+    color: #5b5b5f;
+}
+
+.product.image{
+    text-align: center;
+}
+
+.product-price{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.product-btnBuy{
+     margin-top: 20px;
+    text-align: center;
+}
+
+.product.price {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.005em;
+    color: #2b2b2d;
+    font-weight: 700;
+}
+
+button.btnBuy{
+    text-transform: uppercase !important;
+    font-size: 12.53px !important;
+    font-family: 'Oswald' !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.025em !important;
+    color: #ffffff !important;
+    line-height: 30px !important;
+    background-color: #00abdf !important;
+    border-color: #00abdf !important;
+    padding: 0 50px !important;
+}
+
+.nav-tabs>li {
+    float: left;
+    margin-bottom: 0px !important;
+}
+
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 0px 0px 0 0 !important;
+}
+
+
+.footer {
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+  height: 160px;
+  background-color: #f5f5f5;
+  font-family: 'Oswald', sans-serif;
+}
+
+.custom-block{
+    float: right;
+}
+
+.brand-image{
+    width: 100%;
+}
+
+.header2{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+form.search-product input[type=text] {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #f1f1f1;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.search-product button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #f1f1f1;
+  color: white;
+  font-size: 14px;
+  border: 1px solid #f1f1f1;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.search-product button:hover {
+  background: #f1f1f1;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+i.fa.fa-search{
+    color: black;
+}
+
+.search-product{
+    margin: auto;
+    max-width: 500px;
+    margin-top: 10px;
+}
+
+
+
+button.form-control.submit-button {
+     margin-top: 20px;
+    font-family: 'Oswald' !important;
+    font-size: 15px;
+    background-color: #00abdf !important;
+    border-color: #00abdf !important;
+    color: #fff;
+
+}
+
+a.form-control.submit-button{
+     margin-top: 20px;
+     font-family: 'Oswald' !important;
+     font-size: 15px;
+     background-color: #00abdf !important;
+     border-color: #00abdf !important;
+     color: #fff;
+     text-align: center;
+}
+
+label{
+    margin-top: 20px;
+}
+
+.dropbtn {
+   background-color: #00000000;
+  color: white;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #00000000;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #00000000;
+}
+
+.navigation-header {
+    width: 1170px;
+    margin: 0 auto;
+    background-color: #0000006b;
+    /* padding-bottom: 50px; */
+    margin-bottom: 50px;
+}
+
+a.items, a.items:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.font{
+    font-family: 'Oswald', sans-serif;
+}
+
+p.font{
+    font-family: 'Oswald', sans-serif;
+}
+
+.productos {
+    width: 1170px;
+    margin: 0 auto;
+    background-color: white;
+    padding-bottom: 20px;
+}
+
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee0;
+  margin-left: 20px;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 14px;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #5b5b5f;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #5b5b5f;
+  text-decoration: underline;
+}
+
+.product.details-lul{
+ width: 100%;
+ display: flex;
+}
+.product.information{
+    width: 70%;
+}
+
+.product.image-lul{
+    width: 30%;
+    text-align: center;
+}

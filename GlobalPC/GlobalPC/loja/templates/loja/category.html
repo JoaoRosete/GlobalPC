@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>{{ category.title}} </title>
+
+{% endblock %}
+
+{% block body %}
+<div id="myDIV" class="SemNada" style="display:visible">
+     <p>Sem produtos!</p>
+</div>
+ <div class="productos">
+     <ul class="breadcrumb">
+          <li><a href="{% url 'loja' %}"><strong>Home</strong></a></li>
+         <li><a><strong>{{ category.title }}</strong></a></li>
+    </ul>
+
+     <div id="featured" class="tab-pane fade in active">
+            <div class="featured">
+                <div class="row">
+        {% for product in product %}
+            {% if  product.subcategory.category.id == category.id  %}
+                <div>
+                    <script>document.getElementById("myDIV").style.display = "none";</script>
+                </div>
+
+                        <div class="col-lg-3 col-md-3 col-xs-3">
+                            <div class="product-item-info">
+                                <div class="product image">
+                                    <img class="product-image" src="{{ product.image.url }}" alt="{{ product.title }}">
+                                </div>
+
+                                <div class="product details">
+                                    <div class="product-name">
+                                        <a href="{% url 'product' product.id %}">
+                                            <strong>{{ product.name }}</strong>
+                                        </a>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="product price"> {{ product.price }}€</span>
+                                    </div>
+                                    <div class="product-btnBuy">
+                                        <button type="button" class="btn btnBuy">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            {% endif %}
+        {% endfor %}
+           </div>
+            </div>
+                </div>
+ </div>
+
+
+{% endblock %}
